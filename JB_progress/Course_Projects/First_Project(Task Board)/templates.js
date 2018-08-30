@@ -20,14 +20,14 @@ function TEMP$_noteCreator(){
     </div>
     
     <div class="col-md nameInput inputs">
-    <input id="tasksName" class="forNote inputs" type="text" style="margin:0" placeholder="Task name here" maxlength="15" autofocus/>
+    <input id="tasksName" class="text forNote inputs" type="text" style="margin:0" placeholder="Task name here" maxlength="15" autofocus required/>
         <p class="inputAlert"></p>
     </div>
     </div>
     <div class="row">
     <div class="col-md-12" style="min-height:20px"></div>
     <div class="col-md" style="margin-left:60px;">
-            <textarea id="noteText" class='inputs' maxlength="50" cols="40" rows="3" placeholder="write the task here..."></textarea>
+            <textarea id="noteText" class='text inputs' maxlength="50" cols="40" rows="3" placeholder="write the task here..."></textarea>
             </div>
             </div>
             <div class="col-md container" style="border-bottom:3px solid black;border-radius:10px;" >
@@ -37,12 +37,12 @@ function TEMP$_noteCreator(){
                 
                 <div class="col-xs-5 col-md-5 date">
                         <label>date:</label>
-                    <input  id="noteDate"  class="forNote inputs" placeholder="dd/mm/yyyy" maxlength="10" style="width:150px" />
+                    <input  id="noteDate"  class="forNote inputs" placeholder="dd/mm/yyyy" maxlength="10" style="width:150px" required/>
                     <p class="inputAlert"></p>
                 </div>
                 <div class="col-xs-5 col-md-5 date">
                     <label>time:</label>
-                    <input id="noteTime"  class="forNote inputs" placeholder="00:00" maxlength="5" style="width:150px"/>
+                    <input id="noteTime"  class="forNote inputs" placeholder="00:00" maxlength="5" style="width:150px" required />
                     <p class="inputAlert"></p>
                 </div>
             </div>

@@ -129,20 +129,24 @@ let createNote = {
         this.taskDate = document.getElementById("noteDate").value;
     },
     validateContent: function(){
-        this.inputValidation = ['*you need to add name for the task',  '*fill the date please','*fill the time please'];
-    for(let i = 0;i < this.checkInputs.length;i++){
-        if(this.checkInputs[i].value === ''){
-            return this.inputAlert[i].innerHTML = this.inputValidation[i];
-        }else{ 
-            this.inputAlert[i].innerHTML = '';
+        this.inputValidation = ['*you need to add name and details for the task',  '*fill the date please','*fill the time please'];
+        let allInputs = document.getElementsByClassName('text');
+        for(let i = 0;i < allInputs.length;i++){
+            if(!allInputs[i].value) return  this.inputAlert[0].innerHTML = this.inputValidation[0]; else this.inputAlert[0].innerHTML = '';
         }
-    }
     for(let j = 0;j < notesRepo.noteArr.length;j++){
         let taskIsTaken = "the name of the task is allready taken chose another name"
-        if(notesRepo.noteArr[j].name === this.taskName) return this.inputAlert[0].innerHTML = taskIsTaken;
+        if(notesRepo.noteArr[j].name === this.taskName){ return this.inputAlert[0].innerHTML = taskIsTaken;}else{
+            this.inputAlert[0].innerHTML = '';
+        }
     }
-    if(!this.taskDate.match(this.dateRegex)) return this.inputAlert[1].innerHTML = '*the date you inserted is invalid';
-    if(!this.taskTime.match(this.timeRegex)) return this.inputAlert[2].innerHTML = '*the time you inserted is invalid';
+    if(!this.taskDate.match(this.dateRegex)){
+        return this.inputAlert[1].innerHTML = '*the date you inserted is invalid';
+    } else{this.inputAlert[1].innerHTML = ''}
+    if(!this.taskTime.match(this.timeRegex)){ return this.inputAlert[2].innerHTML = '*the time you inserted is invalid';}else{
+        this.inputAlert[2].innerHTML = '';
+    }
+
     this.ConstructNote(this.taskName, this.taskDesc, this.taskTime, this.taskDate);
     startApp.postIncomeNotes();
     },
