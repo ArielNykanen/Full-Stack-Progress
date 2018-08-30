@@ -1,7 +1,9 @@
-First Project(Task board)
+First Project(Task board).
 Contains:
-Bootstrap,HTML5,CSS,
-javaScript
+- Bootstrap
+- HTML5
+- CSS
+- javaScript
 - LocalStorage
 - DOM Manipulation
 - Events
