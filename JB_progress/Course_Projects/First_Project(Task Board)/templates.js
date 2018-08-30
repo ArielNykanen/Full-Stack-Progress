@@ -6,7 +6,7 @@ function TEMP$_noteCreator(){
         <h2>My task board</h2>
         <p>save note's</p>
         <p>check deleted note's</p>
-        <p>alert when task time end's</p>
+        <p>alert when task date is over</p>
     </div>
     </div>
     <div class="space"></div> <!--just for making some space for a neat look-->
