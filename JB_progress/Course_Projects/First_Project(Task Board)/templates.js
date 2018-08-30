@@ -96,6 +96,39 @@ function TEMP$_yellowNoteExampleTemp(){
     `
 }
 
+function TEMP$_yellowNoteRemovedExampleTemp(){
+    return ` 
+        <div id="{{name}}"  class="col-md-3 {{justPosted}}">
+        <div class="row newTaskWraperForRemovedNotes notes" >
+        <div class="col-md">
+        <div style="min-height:25px">
+        <p style=""> </p>
+        </div>
+        <span id="noteName" style="border-bottom: 1px solid">{{name}}</span>
+        </div>
+    <div class="notesInsideText col-md-12">
+        <p class="noteInText">{{text}}</p>
+    </div>
+    <div class="row container" style='padding-bottom:15px;'>
+        <div class="col-md">
+            <span>time:</span>
+            <span id="noteTime">{{time}}</span>
+        </div>
+        <div class="col-md">
+            <span>Date:</span>
+            <span id="noteDtae">{{date}}</span>
+        </div>
+        <div class="col-md-12">
+            
+        </div>
+        
+    </div>
+    
+    </div>
+    </div>
+    `
+}
+
 function TEMP$_template_alertBeforeRemovingNote(){
 return`
 <div id="overAll"></div>

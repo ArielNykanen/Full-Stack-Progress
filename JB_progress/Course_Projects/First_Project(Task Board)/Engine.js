@@ -1,5 +1,5 @@
 let thisApp = (function(){
-    
+
 let notesRepo = {
     noteArr:[{name:'Example',time:'12:00:Am',date:'22/08/2018', text:'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque exercitationem, atque distinctio corrupti alias rem, sed nemo, quia hic temporibus pariatur repellat illum minima rerum culpa! Necessitatibus consectetur ex architecto.',indexInArr:0, justPosted:'onhover'}],
     init: function(){
@@ -72,7 +72,7 @@ let deletedNotesRepo = {
         this.main.innerHTML += mainTemp;
         let temp = document.getElementById('maint');
         for(let i = 0;i < this.deletedNotesArr.length;i++){
-            this.html = Mustache.to_html(TEMP$_yellowNoteExampleTemp(), this.deletedNotesArr[i]);
+            this.html = Mustache.to_html(TEMP$_yellowNoteRemovedExampleTemp(), this.deletedNotesArr[i]);
             temp.innerHTML += this.html;
             let temp2 = document.getElementById(this.deletedNotesArr[i].name);
             temp2.setAttribute('style', 'opacity:0.7')}
@@ -115,11 +115,11 @@ let createNote = {
         this.validateContent();
         this.render();
         this.saveToLocal();
-        startApp.postIncomeNotes();  
+        
     },
     getcache: function(){
         this.dateRegex = /\d{2}\/\d{2}\/\d{4}/g;
-        this.timeRegex = /([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/g
+        this.timeRegex = /(^[0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]/g
         this.checkInputs = document.getElementsByClassName('forNote');
         this.inputAlert = document.getElementsByClassName('inputAlert');
         this.reg = /\d/g;
@@ -141,11 +141,10 @@ let createNote = {
         let taskIsTaken = "the name of the task is allready taken chose another name"
         if(notesRepo.noteArr[j].name === this.taskName) return this.inputAlert[0].innerHTML = taskIsTaken;
     }
-    console.log(this.taskTime.exec(this.timeRegex));
-    
     if(!this.taskDate.match(this.dateRegex)) return this.inputAlert[1].innerHTML = '*the date you inserted is invalid';
     if(!this.taskTime.match(this.timeRegex)) return this.inputAlert[2].innerHTML = '*the time you inserted is invalid';
     this.ConstructNote(this.taskName, this.taskDesc, this.taskTime, this.taskDate);
+    startApp.postIncomeNotes();
     },
 
     ConstructNote: function(name, text, time, date){
@@ -192,6 +191,7 @@ let createNote = {
     }
             
 }
+
 let startApp = {
     init: function(){
         main.innerHTML = TEMP$_noteCreator();
@@ -339,7 +339,9 @@ let startApp = {
         }
     }
 }
+
 startApp.init();
+
 (function localClock(){
     setInterval(function(){
         let time = new Date();
@@ -351,9 +353,7 @@ startApp.init();
 }());
 return{
     createNote:createNote,
-    deletedNotesRepo:deletedNotesRepo,
-    
-
+    deletedNotesRepo:deletedNotesRepo
 }
 })(); 
 

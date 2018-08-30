@@ -221,6 +221,14 @@ main .newTaskWraper {
   background-repeat: no-repeat;
   min-width: 150;
 }
+main .newTaskWraperForRemovedNotes {
+  margin: 0%;
+  max-width: 180px;
+  overflow: scroll;
+  background-image: url(/image-files/notebg4.png);
+  background-repeat: no-repeat;
+  min-width: 150;
+}
 main .newTaskWraper:hover {
   margin: 0%;
   font-size: 10px;
