@@ -1,4 +1,18 @@
-//page 20 exercise 1 special year-----------------------------------------------
+//--------Start of exercise 1 (get 3 numbers and return the highest one)--------//
+function order(num1, num2, num3){
+    let temp = 0;
+    for(let i = 0;i < arguments.length;i++){
+            if(temp < arguments[i]){
+                temp = arguments[i];
+        }
+    }
+    return temp;
+}
+console.log(order(3, 777, 4));
+//--------END Of exercise 1--------//
+
+
+//page 20 exercise 2 students score-----------------------------------------------
 function studentScore(professionsName, profession){
     let notGood = 55, enough = 65, allMostGood = 75,
     good = 85, veryGood = 95, perfect = 95,maxScore = 100;
@@ -20,9 +34,9 @@ function studentScore(professionsName, profession){
 
 studentScore("math", 99.99999999999999999999999999999999999999999999);
 
-//page 20 exercise 1 special year-----------------------------------------------
+//page 20 exercise 2 students score-----------------------------------------------
 
-//page 20 exercise 4 special year-----------------------------------------------
+//page 20 exercise 3 special year-----------------------------------------------
 function findSpecialYear(year){
     if((year%4 === 0) && (year%100 > 0)){
         console.log("its a special year!!!");
@@ -34,9 +48,9 @@ function findSpecialYear(year){
 }
 
 findSpecialYear(2018);
-//End of exercise 4 special year=================================================
+//End of exercise 3 special year=================================================
 
-//page 20 exercise 5 special month-----------------------------------------------
+//page 20 exercise 4 special month-----------------------------------------------
 function findSpecialMonth(year){
     specialMonth = 29;
     notSpecial = 28;
@@ -50,4 +64,4 @@ function findSpecialMonth(year){
 }
 
 findSpecialMonth(2018);
-//End of exercise 5 special month=================================================
+//End of exercise 4 special month=================================================

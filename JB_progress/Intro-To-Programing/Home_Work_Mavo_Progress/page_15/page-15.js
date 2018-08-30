@@ -8,25 +8,10 @@
     console.log('the avrg of' + x + ' '+ c + ' '+ v + '  is = ' +  temp);
 }
 let three = showAvrh(2,2,2);
-  // page 15 exercise 1----------------------------------------------------
+    // page 15 exercise 1----------------------------------------------------
 
 
-//need to work on it
-    // // page 15 exercise 2===================================================
-    // function valumeOfRoom(height,deepth,wide){
-        
-    //     UnitCube = 3;
-        
-    //     let mesure = height + deepth + wide;
-    //     let result = mesure/UnitCube;
-    //     console.log('the room fits ' + result + ' unit cubes');
 
-    // }
-    // valumeOfRoom(23,23,22)
-  // page 15 exercise 2--------------------------------------------------- 
-
-
-  
     // page 15 exercise 4===================================================
     function durationMovie(movie, name) {
         let hour = Math.floor(movie/60);
@@ -35,7 +20,7 @@ let three = showAvrh(2,2,2);
     }
 
     let theMovie = durationMovie(200, 'movie123');
-  // page 15 exercise 4--------------------------------------------------- 
+    // page 15 exercise 4--------------------------------------------------- 
 
     // page 15 exercise 5===================================================
     function get4DigitNum(num) {
