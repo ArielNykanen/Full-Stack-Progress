@@ -10,7 +10,7 @@ javaScript
 =====================================
 Details
 ------------------------------
-1.User can add notes.
+ - 1.User can add notes.
 2.User can delete notes.
 3.User can add date and time(With real date/time validation).
 4.Indication with input validation errors.
