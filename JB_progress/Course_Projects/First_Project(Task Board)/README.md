@@ -1,6 +1,7 @@
-First Project(Task board).
-Contains:
--- Bootstrap
+First Project(Task board)
+
+Contains
+- Bootstrap
 - HTML5
 - CSS
 - javaScript
