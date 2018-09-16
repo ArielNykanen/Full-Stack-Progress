@@ -164,10 +164,6 @@ let createNote = {
         this.saveToLocal();
     },
 
-    saveToLocal: function(){
-
-    },
-
     removeNote: function(id){
         for(let i = 0;i < notesRepo.noteArr.length;i++){
             if(notesRepo.noteArr[i].name === id){
@@ -339,7 +335,6 @@ let startApp = {
             if(notesRepo.noteArr[i].date.match(monthReg)[1] < date.getMonth()+1) return ask() ;
             if(notesRepo.noteArr[i].date.match(dayReg)[0] < date.getDate() && notesRepo.noteArr[i].date.match(monthReg)[1] <= date.getMonth()+1) return ask();
             console.log(notesRepo.noteArr[i].date.match(monthReg)[1] > 8);
-            
         }
     }
 }
