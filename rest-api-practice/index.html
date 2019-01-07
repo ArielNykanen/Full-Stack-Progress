@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row" id="topMResults">
+        <div class="col-12">
+
+        </div>
+          
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button id="nextBtn" class="btn btn-sm w-100 btn-success">Next Page</button>
+        </div>  
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        page = 1;
+        function getPage(page) {
+        $.ajax({
+            type: 'GET',
+            url: `https://api.themoviedb.org/3/movie/top_rated?api_key=6f829d011cba6ac4dc2afbafd6659f29&language=en-US&page=${page}`,
+            contentType: 'application/json',
+            dataType: 'json',
+            processData: false,
+            data: JSON.stringify({ last_id: 1650 }),
+            success: function (resp) {
+                let template = '';
+                const moviesArr = resp.results
+                for (let i = 0; i < moviesArr.length; i++) {
+                    template += `
+            <div class="col-10">
+            <h2>title:${moviesArr[i].title}</h2>
+        </div>
+        <div class="col-2">
+                <h2>votes:${moviesArr[i].vote_count}</h2>
+            </div>
+            <div class="col-12">
+                <p> <strong>overview</strong>: ${moviesArr[i].overview}</p>    
+            </div>
+            `
+                }
+                $('#topMResults').html(template);
+            }
+        });
+    }
+
+        $('#nextBtn').click(
+            (d) => {
+                page++;
+                getPage(page);
+                console.log(page);
+                
+            }
+            );
+    });
+</script>
