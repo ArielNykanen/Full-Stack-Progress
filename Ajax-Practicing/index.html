@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Search Countries</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bg-dark text-white">
+            <h1 align=center>Search Countries</h1>
+            <h2 align=center>From</h2>
+            <h2 align=center>https://restcountries.eu</h2>
+        </div>
+    <div class="row my-4">
+        <div class="col-12 my-4 text-center">
+                <h2 align=center>Get Countries By Name</h2>
+                <div class="row">
+                    
+                    <div class="col-10">
+                        
+                        <input type="text" class="form-control text-center" id="contryName" placeholder="Enter Any Keyword">
+                        <button class="btn btn-primary my-4" id="search">Search By Name</button>
+                    </div>
+                    <div class="col-2 text-center">
+                            <label for="searchAll">Search All</label>
+                            <input name="searchAll" class="form-control" id="searchAll" type="checkbox">
+                        </div>
+                
+            </div>
+        </div>
+
+        
+    </div>
+    <!-- fetching results will be here -->
+    <div class="row" id="countryResults">
+            
+    </div>
+</div>
+
+</body>
+</html>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="main.js"></script>
