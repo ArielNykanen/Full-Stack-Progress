@@ -1,0 +1,10 @@
+{
+    "events": [
+        { "id": 1, "title": "json-server", "author": "typicode" }
+    ],
+    "classes": [
+        { "name": "First Grade" },
+        { "name": "Second Grade" },
+        { "name": "third Grade" }
+    ]
+}
