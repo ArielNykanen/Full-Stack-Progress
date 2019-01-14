@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from '../services/event.service';
+import { EventModel } from '../models/event.model';
 
 @Component({
   selector: 'app-school-events',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./school-events.component.css']
 })
 export class SchoolEventsComponent implements OnInit {
-
-  constructor() { }
+  allEvents: EventModel[];
+  constructor(private eventServices: EventService) { }
 
   ngOnInit() {
+    this.allEvents = this.eventServices.getAll();
   }
 
 }

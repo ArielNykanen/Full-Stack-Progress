@@ -1,3 +1,20 @@
-<p>
-  school-events works!
-</p>
+<div class="row">
+  <ng-container  *ngFor='let event of allEvents'>
+    <div class="col-4">
+      <div class="card" style="width: 15rem;">
+          <img class="card-img-top" src="{{ event.eventImageUrl }}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Event Name: {{ event.name }}</h5>
+            <p class="card-text">Date: {{ event.date }}</p>
+            <p class="card-text">Duration: {{ event.duration }}</p>
+            <div class="card-text">Assigned Classes:
+              <ul>
+                <li *ngFor="let class of event.classes">{{ class.name }}</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+</div>
