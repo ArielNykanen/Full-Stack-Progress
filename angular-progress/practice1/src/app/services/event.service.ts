@@ -9,4 +9,8 @@ export class EventService {
   return this.storageServices.get();
   }
 
+  deleteById(eventId: number) {
+    this.storageServices.deleteById(eventId);
+  }
+
 }

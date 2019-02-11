@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { EventModel } from '../models/event.model';
 import { ClassModel } from '../models/class.model';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class LocalStorageService {
-
-  get() {
+public eventsWasUpdated = new Subject();
+  get(cb) {
     const allEvents = JSON.parse(localStorage.getItem('events'));
     if (!allEvents) {
       const savedEvents: EventModel[] = [
         
       ];
       localStorage.setItem('events', JSON.stringify(savedEvents));
-      return savedEvents;  
+      return cb(savedEvents); 
     }
 
-    return allEvents;
+    return cb(allEvents);
   }
 
   getAllClasses() {
@@ -30,6 +31,14 @@ export class LocalStorageService {
       return savedClasses;  
     }
     return allClasses;
+  }
+
+  deleteById(id) {
+    this.get(events => {
+      const updatedEvents = events.splice(id, 1);
+      this.eventsWasUpdated.next(updatedEvents);
+    });
+
   }
 
 }

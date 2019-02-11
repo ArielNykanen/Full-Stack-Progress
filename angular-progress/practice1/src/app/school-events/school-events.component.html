@@ -1,5 +1,5 @@
 <div class="row">
-  <ng-container  *ngFor='let event of allEvents'>
+  <ng-container  *ngFor='let event of allEvents;i = index'>
     <div class="col-4">
       <div class="card" style="width: 15rem;">
           <img class="card-img-top" src="{{ event.eventImageUrl }}" alt="Card image cap">
@@ -12,7 +12,7 @@
                 <li *ngFor="let class of event.classes">{{ class.name }}</li>
               </ul>
             </div>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+<button (click)="deleteEvent(i)">Delete</button>
           </div>
         </div>
       </div>
