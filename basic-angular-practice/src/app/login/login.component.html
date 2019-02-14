@@ -1,5 +1,11 @@
-<label for="email">E-mail</label>
-<input type="email" #email>
-<label for="password"></label>
-<input type="password" #password>
-<button (click)="onLogin(email, password)">Login</button>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 text-center w-50">
+        <label for="email">E-mail</label>
+        <input class="form-control" type="email" #email>
+        <label for="password"></label>
+        <input class="form-control" type="password" #password>
+        <button class="btn btn-sm btn-success my-4" (click)="onLogin(email, password)">Login</button>
+    </div>
+    <div class="col-4"></div>
+</div>

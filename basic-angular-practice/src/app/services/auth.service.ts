@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { of, throwError } from 'rxjs';
+import { of, throwError, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  userLogged = new Subject<boolean>();
   constructor() { }
   login(email, password) {
-    if (email === 'a@a.con' && password === '1212') {
+    if (email === 'a@a.com' && password === '1212') {
       const token = 'asdklfh;lasdjh;sdlfkjdlfh4'
       this.setToken(token);
+      this.userLogged.next(true);
      return of(token);
     } else {
-
       return throwError('Login failed.');
     }
   }
@@ -22,10 +22,25 @@ export class AuthService {
   }
 
   getToken() {
-    const token = JSON.parse(localStorage.getItem('token'))
+    let token = localStorage.getItem('token');
     if (token) {
-      return true;
+      return of(true);
     }
-    return false;
+    return throwError('not logged!');
+  }
+
+  isLogged() { 
+  this.getToken().subscribe(res => {
+    if (!res) {
+      this.userLogged.next(false);
+    } else {
+      this.userLogged.next(true);
+    }
+  })
+  }
+
+  logOut() {
+    window.localStorage.removeItem('token');
+    this.userLogged.next(false);
   }
 }
