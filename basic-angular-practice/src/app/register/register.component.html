@@ -1,0 +1,23 @@
+
+<form #registerFrom>
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>Register Form</h1>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4">
+      <label for="name">name</label>
+      <input [(ngModel)]="userModel.name" type="text" name="userName" class="form-control" placeholder="name">
+      <label for="age">age</label>
+      <input [(ngModel)]="userModel.age" type="text" name="age" class="form-control" placeholder="age">
+      <label for="age">gender</label>
+      <input [(ngModel)]="userModel.gender" type="text" name="gender" class="form-control" placeholder="gender">
+      <label for="number">number</label>
+      <input [(ngModel)]="userModel.number" type="text" name="gender" class="form-control" placeholder="gender">
+    </div>
+    <div class="col-4"></div>
+    <div class="col-12">
+      <button class="btn btn-success" (click)="registerUser()">Register</button>
+    </div>
+  </div>
+</form>
